@@ -1,26 +1,54 @@
 @import "tailwindcss";
+@import "tailwindcss-animate";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-bg: var(--bg);
+  --color-panel: var(--panel);
+  --color-panel-2: var(--panel-2);
+  --color-border: var(--border);
+  --color-fg: var(--fg);
+  --color-fg-muted: var(--fg-muted);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-warning: var(--warning);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --font-family-mono: var(--font-mono), ui-monospace, monospace;
+  --font-family-sans: var(--font-sans), ui-sans-serif, system-ui;
+
+  --animate-caret-blink: caret-blink 1.1s ease-in-out infinite;
+
+  @keyframes caret-blink {
+    0%, 70%, 100% { opacity: 1; }
+    20%, 50% { opacity: 0; }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  --bg: #ffffff; --panel: #f6f8fa; --panel-2: #eaeef2; --border: #d0d7de;
+  --fg: #24292f; --fg-muted: #57606a; --accent: #0969da; --accent-2: #8250df;
+  --success: #1a7f37; --danger: #cf222e; --warning: #9a6700;
+}
+.dark {
+  --bg: #0d1117; --panel: #161b22; --panel-2: #21262d; --border: #30363d;
+  --fg: #c9d1d9; --fg-muted: #8b949e; --accent: #58a6ff; --accent-2: #a371f7;
+  --success: #3fb950; --danger: #f85149; --warning: #d29922;
+}
+* { border-color: var(--border); }
+html, body {
+  height: 100%; background: var(--bg); color: var(--fg);
+  font-family: var(--font-sans);
+  transition: background-color 200ms ease-out, color 200ms ease-out;
+}
+::selection { background: var(--accent); color: #fff; }
+button, a { outline-offset: 2px; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
