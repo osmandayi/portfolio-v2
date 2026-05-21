@@ -1,3 +1,147 @@
 {
-  "chrome": { "title": "osman.dev — Portfolyo", "branch": "main", "commit": "feat: add i18n", "ready": "Hazır", "themeDark": "koyu", "themeLight": "açık" }
+  "chrome": {
+    "title": "osman.dev — Portfolyo",
+    "branch": "main",
+    "commit": "feat: add i18n",
+    "ready": "Hazır",
+    "themeDark": "koyu",
+    "themeLight": "açık",
+    "encoding": "UTF-8",
+    "sidebarExplorer": "Gezgin",
+    "sidebarSearch": "Arama",
+    "sidebarGit": "Kaynak Kontrol",
+    "sidebarSettings": "Ayarlar",
+    "comingSoon": "Yakında",
+    "toggleSidebar": "Sidebar'ı aç/kapat",
+    "toggleTerminal": "Terminali aç/kapat",
+    "openExternal": "LinkedIn'i aç"
+  },
+  "readme": {
+    "greeting": "// Portfolyoma hoş geldiniz",
+    "name": "Osman Dayı",
+    "role": "Frontend Geliştirici",
+    "pitch": "Modern ve performanslı web arayüzleri geliştiriyorum. Şu anda Huawei'de eski sistemleri modern frontend mimarilerine taşıyorum.",
+    "ctaProjects": "Projeleri gör",
+    "ctaContact": "İletişime geç",
+    "ctaCv": "CV'yi indir"
+  },
+  "about": {
+    "heading": "Hakkımda",
+    "body": "Merhabalar, ben Osman Dayı. Bilgisayar Mühendisliği mezunuyum ve Frontend Developer olarak yaklaşık 3 yıllık deneyime sahibim. Kariyerimde ağırlıklı olarak legacy sistemlerin modern frontend mimarilerine taşınması, performans iyileştirme ve sürdürülebilir arayüzler geliştirme üzerine çalıştım.\n\nHuawei'de yer aldığım migration projelerinde eski React yapıları, Pure JavaScript, Vue.js ve kurumsal UI kütüphaneleriyle karmaşık sistemleri modernleştirdim. Geliştirdiğim projelerde React, Next.js, Tailwind CSS ve çeşitli state management çözümleriyle kullanıcı odaklı ve güvenli uygulamalar ürettim.\n\nBuna ek olarak, kısa süreliğine kendi ofisimi kurarak CRM ve ERP odaklı müşteri ihtiyaçlarına çözümler geliştirdim ve çoklu e-ticaret platformlarını tek bir panelden yönetmeyi sağlayan bir entegrasyon ürünü üzerinde çalıştım.\n\nÖğrenmeye açık yapım ve problem çözme becerilerimle, yer aldığım projelere hızlı adapte olarak katma değer sağlamayı hedefliyorum."
+  },
+  "experience": {
+    "heading": "Deneyim",
+    "present": "Devam ediyor",
+    "huawei": {
+      "role": "Yazılım Geliştirici",
+      "bullets": "Huawei bünyesinde ağırlıklı olarak frontend migration projelerinde aktif rol aldım.",
+      "nbi": {
+        "title": "NBI (Northbound Interface)",
+        "bullets": "Sunucu bilgileri, network envanteri, cihaz durumları, sistem entegrasyonları ve operatör bazlı veri yönetimi gibi kritik modüller üzerinde çalıştım.||Projede React'in eski bir sürümü ve Huawei'ye özel legacy bir UI kütüphanesi kullanıldığından, birçok teknik problemi pure JavaScript ile çözmek zorunda kaldım.||Debug süreçlerinin sınırlı olması nedeniyle, karmaşık ve zorlayıcı kısımlarda sorumluluk alarak pure JavaScript tecrübemle ekip üzerindeki teknik yükü azalttım.||Kod refactor, hata ayıklama ve performans iyileştirme çalışmalarında aktif rol aldım."
+      },
+      "sc": {
+        "title": "Supply Chain",
+        "bullets": "Daha önce Webix UI ile geliştirilmiş projenin modern mimariye taşınması sürecinde çalıştım.||Migration sürecinde, daha önce kullanmadığım Vue.js teknolojisini kısa sürede öğrenerek projeye hızlıca adapte oldum.||Huawei'nin inline UI kütüphanesi olan Aurora kullanılarak sayfaların yeniden geliştirilmesi ve modern UI/UX standartlarına uygun hale getirilmesini sağladım.||Kısa sürede önemli ilerleme kaydederek sayfaların hızlı, sürdürülebilir ve ölçeklenebilir şekilde migrate edilmesine katkı sağladım."
+      }
+    },
+    "azetech": {
+      "role": "Frontend Geliştirici",
+      "bullets": "Dijirack adında bir IT monitoring uygulaması geliştirdim.||Duyarlı ve kullanıcı dostu arayüzler oluşturmak için MUI kütüphanesini kullandım.||JWT tabanlı kimlik doğrulama ve yetkilendirme sistemlerini uygulayarak güvenli kullanıcı erişimi sağladım.||Asenkron durumu etkin bir şekilde yönetmek için React Query kütüphanesini kullandım.||Kullanıcı dostu grafikler ve diyagramlar oluşturmak için ApexCharts'tan yararlandım.||Form yönetimi için Formik kütüphanesini kullanarak interaktif formlar geliştirdim.||Veri iletimini güvenli şekilde sağlamak için RESTful API çağrıları kullandım.||React Flow kullanarak kabin ve topoloji görselleştirmeleri oluşturdum."
+    },
+    "hakmar": {
+      "role": "Stajyer",
+      "bullets": "Stajyerlik dönemimde Flutter ve Firebase kullanarak çeşitli mobil uygulamalar geliştirdim: Quiz App, BMI Calculator, Flash Chat, Zar At ve Destiny Game."
+    }
+  },
+  "projects": {
+    "heading": "Projeler",
+    "filterAll": "Tümü",
+    "filterFrontend": "Frontend",
+    "filterFullStack": "FullStack",
+    "viewGit": "GitHub",
+    "viewLive": "Canlı önizleme",
+    "noLive": "Canlı önizleme yok",
+    "noRepo": "Özel repo",
+    "items": {
+      "coffe": {
+        "title": "Coffe Pub",
+        "desc": "Kahve severler için bilgi ve seçenekler sunan tek sayfalık site. Tailwind ile şık layout, React Type Animation ile etkileşim — akıcı geçişler ve etkileyici görsel öğeler."
+      },
+      "sas": {
+        "title": "SAS — 30 Temmuz",
+        "desc": "React ve Tailwind ile geliştirilmiş basit eğitsel/tanıtım odaklı tek sayfalık site."
+      },
+      "ecommerce": {
+        "title": "E-Ticaret",
+        "desc": "Modern arayüz, doğrulama işlemleri ve kullanıcı dostu özelliklerle online alışveriş deneyimini optimize eden proje. Tailwind UI, Zustand state, Strapi backend, kullanıcıya özel kalıcı sepetler."
+      },
+      "netflix": {
+        "title": "Netflix Clone",
+        "desc": "Netflix UI klonu — responsive grid, hover etkileşimleri, video kart detayları."
+      },
+      "dijirack": {
+        "title": "Dijirack",
+        "desc": "Azetech'te geliştirdiğim IT monitoring uygulaması. MUI, JWT auth, React Query, ApexCharts, React Flow topolojileri, Formik formları."
+      },
+      "ifi": {
+        "title": "IFI",
+        "desc": "Kurumsal iç frontend projesi (özel)."
+      },
+      "medscript": {
+        "title": "Medscript",
+        "desc": "İlaçların birbirleriyle olan potansiyel yan etkileşimlerini analiz ederek güvenli kullanımı destekleyen proje. Next.js + Tailwind, Select2 bileşenleri. Teknofest 2024 — güvenli ilaç kullanımına katkı."
+      }
+    }
+  },
+  "skills": {
+    "heading": "Yetenekler",
+    "core": "Çekirdek",
+    "libraries": "Kütüphaneler & Araçlar",
+    "tools": "İş Akışı"
+  },
+  "education": {
+    "heading": "Eğitim",
+    "school": "Zonguldak Bülent Ecevit Üniversitesi",
+    "degree": "Bilgisayar Mühendisliği Lisans",
+    "years": "2018 – 2023",
+    "lang": "Yabancı dil: İngilizce (B1)"
+  },
+  "contact": {
+    "heading": "İletişim",
+    "intro": "$ ./contact.sh",
+    "phone": "Telefon",
+    "email": "E-posta",
+    "location": "Konum",
+    "locationValue": "Pendik / İstanbul",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "copyEmail": "E-postayı kopyala",
+    "copied": "Kopyalandı!"
+  },
+  "palette": {
+    "placeholder": "Bir komut yazın…",
+    "empty": "Sonuç yok.",
+    "groupNav": "Gezinme",
+    "groupTheme": "Tema",
+    "groupLang": "Dil",
+    "groupLinks": "Bağlantılar",
+    "groupActions": "Eylemler",
+    "go": "Git",
+    "switchTheme": "Temayı değiştir",
+    "switchLang": "Dili değiştir",
+    "openGithub": "GitHub'ı aç",
+    "openLinkedin": "LinkedIn'i aç",
+    "copyEmail": "E-postayı kopyala",
+    "toggleTerminal": "Terminali aç/kapat",
+    "toggleSidebar": "Sidebar'ı aç/kapat"
+  },
+  "terminal": {
+    "prompt": "osman@portfolio:~$",
+    "welcome": "Komutlar için 'help' yazın.",
+    "notFound": "komut bulunamadı: {cmd}. 'help' yazın.",
+    "help": "Mevcut komutlar:\n  help                bu yardımı göster\n  whoami              kullanıcı adını yaz\n  ls                  dosyaları listele\n  cat <file>          bir bölümü göster\n  open <file>         bir tab aç\n  theme dark|light    temayı değiştir\n  lang en|tr          dili değiştir\n  contact             iletişim bilgisi\n  clear               terminali temizle\n  vim|nano|sudo …     :)",
+    "vimJoke": "vim yüklü değil. Cursor dene.",
+    "nanoJoke": "nano mu? 2026'da mı?",
+    "sudoJoke": "osman sudoers dosyasında değil. Bu olay bildirilecek."
+  }
 }

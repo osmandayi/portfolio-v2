@@ -1,3 +1,147 @@
 {
-  "chrome": { "title": "osman.dev — Portfolio", "branch": "main", "commit": "feat: add i18n", "ready": "Ready", "themeDark": "dark", "themeLight": "light" }
+  "chrome": {
+    "title": "osman.dev — Portfolio",
+    "branch": "main",
+    "commit": "feat: add i18n",
+    "ready": "Ready",
+    "themeDark": "dark",
+    "themeLight": "light",
+    "encoding": "UTF-8",
+    "sidebarExplorer": "Explorer",
+    "sidebarSearch": "Search",
+    "sidebarGit": "Source Control",
+    "sidebarSettings": "Settings",
+    "comingSoon": "Coming soon",
+    "toggleSidebar": "Toggle sidebar",
+    "toggleTerminal": "Toggle terminal",
+    "openExternal": "Open LinkedIn"
+  },
+  "readme": {
+    "greeting": "// Welcome to my portfolio",
+    "name": "Osman Dayı",
+    "role": "Frontend Engineer",
+    "pitch": "I build modern, performant web interfaces. Currently migrating legacy systems to modern frontend architectures at Huawei.",
+    "ctaProjects": "View projects",
+    "ctaContact": "Contact me",
+    "ctaCv": "Download CV"
+  },
+  "about": {
+    "heading": "About me",
+    "body": "Hi, I'm Osman Dayı. I'm a Computer Engineering graduate and a Frontend Developer with around 3 years of experience. My career has mostly focused on migrating legacy systems to modern frontend architectures, performance optimization, and building sustainable interfaces.\n\nAt Huawei, I work on migration projects involving older React stacks, vanilla JavaScript, Vue.js, and enterprise UI libraries — modernizing complex systems. In my own projects I produce user-focused, secure applications with React, Next.js, Tailwind CSS, and various state management solutions.\n\nFor a short period I ran my own office, building CRM and ERP solutions and an integration product that lets you manage multiple e-commerce platforms from a single panel.\n\nI adapt quickly to new projects and aim to add value through curiosity and problem solving."
+  },
+  "experience": {
+    "heading": "Experience",
+    "present": "Present",
+    "huawei": {
+      "role": "Software Developer",
+      "bullets": "At Huawei I'm primarily involved in frontend migration projects.",
+      "nbi": {
+        "title": "NBI (Northbound Interface)",
+        "bullets": "Worked on critical modules: server information, network inventory, device statuses, system integrations and operator-based data management.||Because the project used an older React version and a Huawei-internal legacy UI library, many problems had to be solved with vanilla JavaScript.||With limited debugging tooling, I took ownership of the hardest parts and reduced the technical load on the team using my vanilla JS experience.||Took an active role in refactor, debugging and performance work."
+      },
+      "sc": {
+        "title": "Supply Chain",
+        "bullets": "Migrating a project originally built with Webix UI to a modern stack.||Learned Vue.js quickly to onboard onto the migration.||Rebuilt pages using Huawei's in-house Aurora UI library to meet modern UI/UX standards.||Helped migrate pages quickly, sustainably and in a way that scales."
+      }
+    },
+    "azetech": {
+      "role": "Frontend Developer",
+      "bullets": "Built Dijirack, an IT monitoring application.||Built responsive, user-friendly interfaces with MUI.||Implemented JWT-based authentication and authorization for secure access.||Used React Query to manage asynchronous state effectively.||Used ApexCharts for user-friendly charts and diagrams.||Built interactive forms with Formik.||Used REST APIs and proper protocols for secure data transfer.||Built cabinet and topology visualizations with React Flow."
+    },
+    "hakmar": {
+      "role": "Intern",
+      "bullets": "Built various mobile applications with Flutter and Firebase during my internship — Quiz App, BMI Calculator, Flash Chat, Roll Dice, Destiny Game."
+    }
+  },
+  "projects": {
+    "heading": "Projects",
+    "filterAll": "All",
+    "filterFrontend": "Frontend",
+    "filterFullStack": "FullStack",
+    "viewGit": "GitHub",
+    "viewLive": "Live demo",
+    "noLive": "No live demo",
+    "noRepo": "Private repo",
+    "items": {
+      "coffe": {
+        "title": "Coffe Pub",
+        "desc": "A single-page coffee site offering information and choices for coffee lovers. Tailwind for layout, React Type Animation for entrance effects — smooth transitions and immersive visual elements."
+      },
+      "sas": {
+        "title": "SAS — 30 Temmuz",
+        "desc": "A simple educational/marketing single-page site built with React and Tailwind."
+      },
+      "ecommerce": {
+        "title": "E-Commerce",
+        "desc": "A modern e-commerce experience with validation and user-friendly features. Tailwind UI, Zustand for state, Strapi backend, per-user persistent carts."
+      },
+      "netflix": {
+        "title": "Netflix Clone",
+        "desc": "Netflix UI clone — responsive grid, hover interactions, video card details."
+      },
+      "dijirack": {
+        "title": "Dijirack",
+        "desc": "IT monitoring application built at Azetech. MUI, JWT auth, React Query, ApexCharts, React Flow topologies, Formik forms."
+      },
+      "ifi": {
+        "title": "IFI",
+        "desc": "Enterprise internal frontend project (private)."
+      },
+      "medscript": {
+        "title": "Medscript",
+        "desc": "Analyzes potential side-effect interactions between medications for safer use. Next.js + Tailwind, Select2 components. Teknofest 2024 entry — a contribution toward safer medication usage."
+      }
+    }
+  },
+  "skills": {
+    "heading": "Skills",
+    "core": "Core",
+    "libraries": "Libraries & Tools",
+    "tools": "Workflow"
+  },
+  "education": {
+    "heading": "Education",
+    "school": "Zonguldak Bülent Ecevit University",
+    "degree": "B.S. Computer Engineering",
+    "years": "2018 – 2023",
+    "lang": "Foreign language: English (B1)"
+  },
+  "contact": {
+    "heading": "Contact",
+    "intro": "$ ./contact.sh",
+    "phone": "Phone",
+    "email": "Email",
+    "location": "Location",
+    "locationValue": "Pendik / İstanbul",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "copyEmail": "Copy email",
+    "copied": "Copied!"
+  },
+  "palette": {
+    "placeholder": "Type a command…",
+    "empty": "No results.",
+    "groupNav": "Navigation",
+    "groupTheme": "Theme",
+    "groupLang": "Language",
+    "groupLinks": "Links",
+    "groupActions": "Actions",
+    "go": "Go to",
+    "switchTheme": "Switch theme",
+    "switchLang": "Switch language",
+    "openGithub": "Open GitHub",
+    "openLinkedin": "Open LinkedIn",
+    "copyEmail": "Copy email",
+    "toggleTerminal": "Toggle terminal",
+    "toggleSidebar": "Toggle sidebar"
+  },
+  "terminal": {
+    "prompt": "osman@portfolio:~$",
+    "welcome": "Type 'help' to see available commands.",
+    "notFound": "command not found: {cmd}. Type 'help'.",
+    "help": "Available commands:\n  help                show this help\n  whoami              print user name\n  ls                  list files\n  cat <file>          dump a section\n  open <file>         open a tab\n  theme dark|light    switch theme\n  lang en|tr          switch language\n  contact             print contact info\n  clear               clear scrollback\n  vim|nano|sudo …     :)",
+    "vimJoke": "vim is not installed. Try Cursor.",
+    "nanoJoke": "nano? In 2026?",
+    "sudoJoke": "osman is not in the sudoers file. This incident will be reported."
+  }
 }
