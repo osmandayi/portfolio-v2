@@ -17,7 +17,7 @@ export const PROJECTS: Project[] = [
   { id: "netflix", titleKey: "projects.items.netflix.title", descKey: "projects.items.netflix.desc", image: "/projects/netflix-clone-fe.png", tags: ["Frontend"], gitUrl: "https://github.com/osmandayi/Netflix-Clone-FE", previewUrl: "https://netflix-clone-fe.vercel.app/" },
   { id: "dijirack", titleKey: "projects.items.dijirack.title", descKey: "projects.items.dijirack.desc", image: "/projects/demo_dijirack.png", tags: ["Frontend"], gitUrl: null, previewUrl: "https://demo.dijirack.com/" },
   { id: "ifi", titleKey: "projects.items.ifi.title", descKey: "projects.items.ifi.desc", image: "/projects/demo_ifi.png", tags: ["Frontend"], gitUrl: null, previewUrl: null },
-  { id: "medscript", titleKey: "projects.items.medscript.title", descKey: "projects.items.medscript.desc", image: "/projects/medscript.png", tags: ["Frontend"], gitUrl: null, previewUrl: "http://medscript.dijirack.com/" },
+  { id: "medscript", titleKey: "projects.items.medscript.title", descKey: "projects.items.medscript.desc", image: "/projects/medscript.png", tags: ["Frontend"], gitUrl: null, previewUrl: "https://medscript.dijirack.com/" },
 ];
 
 export const PROJECT_TAG_FILTERS: ("All" | ProjectTag)[] = ["All", "Frontend", "FullStack"];
