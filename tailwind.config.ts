@@ -1,8 +1,10 @@
+// NOTE: This file is kept for reference. Tailwind CSS v4 is configured via globals.css @theme.
+// Design tokens are defined in src/app/globals.css using @theme inline directive.
 import type { Config } from "tailwindcss";
 import animate from "tailwindcss-animate";
 
 const config: Config = {
-  darkMode: ["class"],
+  darkMode: "class" as const,
   content: ["./src/**/*.{ts,tsx,js,jsx,mdx}"],
   theme: {
     extend: {
