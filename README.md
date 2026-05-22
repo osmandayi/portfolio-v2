@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# osman.dev — Portfolio
 
-## Getting Started
+Personal portfolio of **Osman Dayı** (Frontend Developer), built as an interactive code editor. Every section of the CV is a "file" you open in a tab — sidebar, command palette, fake terminal, the whole thing.
 
-First, run the development server:
+> Live: _(deploy soon)_
+
+---
+
+## Features
+
+- **IDE-style shell** — title bar, file-tree sidebar, multi-tab editor, status bar, slide-up terminal panel.
+- **Bilingual** — full English + Turkish translations via `next-intl`, switchable from the title bar or command palette.
+- **Dark / light themes** — GitHub Modern palette with a 200 ms color transition, system preference auto-detect via `next-themes`.
+- **Command palette** — `Cmd/Ctrl+K` opens a `cmdk`-powered fuzzy finder for navigation, theme, language, and quick actions.
+- **Keyboard shortcuts** — `Cmd/Ctrl+B` toggles sidebar, `Cmd/Ctrl+W` closes the active tab, `Cmd/Ctrl+1..7` jumps between tabs, `` Ctrl+` `` toggles the terminal.
+- **Fake terminal** — `help`, `whoami`, `ls`, `cat <file>`, `open <file>`, `theme dark|light`, `lang en|tr`, `contact`, `clear`, plus history navigation with arrow keys (persisted in `sessionStorage`).
+- **Animations** — typing animation on the homepage hero, tab open/close width animation, page-transition fade, scroll-reveal on cards, all collapsing gracefully under `prefers-reduced-motion`.
+- **CV download** — automatically serves whichever PDF in `public/` was last modified.
+
+## Tech stack
+
+| Layer | Choice |
+|---|---|
+| Framework | Next.js 16 (App Router, Turbopack) |
+| Language | TypeScript (strict) |
+| Styling | Tailwind CSS v4 (`@theme inline` tokens in `globals.css`) |
+| i18n | `next-intl` v4 |
+| Theming | `next-themes` |
+| Animations | Framer Motion |
+| Command palette | `cmdk` |
+| Icons | `lucide-react` |
+| Tests | Vitest + happy-dom + Testing Library |
+| Lint | ESLint flat config + typescript-eslint |
+
+## Quick start
 
 ```bash
+git clone https://github.com/osmandayi/portfolio-v2.git
+cd portfolio-v2
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open <http://localhost:3000> — you'll be redirected to `/en`. Try `/tr` for Turkish.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Scripts
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Start dev server with Turbopack |
+| `npm run build` | Production build (all 14 locale routes pre-rendered) |
+| `npm start` | Run the production build |
+| `npm test` | Run unit tests once (Vitest) |
+| `npm run test:watch` | Watch mode |
+| `npm run lint` | ESLint over `src/` |
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+  app/[locale]/         Locale-scoped routes (en/tr) for the 7 sections
+  components/
+    ide/                Shell chrome: TitleBar, Sidebar, TabStrip, StatusBar, Terminal, CommandPalette
+    content/            One component per "file" — README, About, Experience, Projects, Skills, Education, Contact
+    primitives/         TypingText, RevealOnView, LineGutter, ThemeToggle, LanguageToggle
+    providers/          ThemeProvider + NextIntlClientProvider + UiStoreProvider wrapper
+  hooks/                useTabs, useKeyboard, useTerminal, useUiStore, useCursorPosition
+  lib/                  files, projects, skills, experience, cv (server-side CV picker), cn
+  messages/             en.json, tr.json
+  i18n.ts               next-intl config (timezone, locales)
+  proxy.ts              next-intl middleware (Next 16 renamed middleware → proxy)
+tests/                  Vitest specs for the three non-trivial hooks
+public/                 CV PDFs and project screenshots
+docs/superpowers/       Original design spec and implementation plan
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Built for Vercel — push to GitHub, import the repo at <https://vercel.com/new>, no environment variables required. All 14 locale routes are pre-rendered at build time.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Personal portfolio — no open license. Feel free to read the code for ideas, but please don't redeploy it as your own.
