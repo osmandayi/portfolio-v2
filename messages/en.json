@@ -14,7 +14,16 @@
     "comingSoon": "Coming soon",
     "toggleSidebar": "Toggle sidebar",
     "toggleTerminal": "Toggle terminal",
-    "openExternal": "Open LinkedIn"
+    "openExternal": "Open LinkedIn",
+    "openLegacy": "Switch to old version"
+  },
+  "dialog": {
+    "switchLegacy": {
+      "title": "Switch to the old version?",
+      "body": "You are about to leave this site and open the older portfolio. Continue?",
+      "confirm": "Yes, take me there",
+      "cancel": "Stay here"
+    }
   },
   "readme": {
     "greeting": "// Welcome to my portfolio",

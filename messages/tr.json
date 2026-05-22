@@ -14,7 +14,16 @@
     "comingSoon": "Yakında",
     "toggleSidebar": "Sidebar'ı aç/kapat",
     "toggleTerminal": "Terminali aç/kapat",
-    "openExternal": "LinkedIn'i aç"
+    "openExternal": "LinkedIn'i aç",
+    "openLegacy": "Eski sürüme geç"
+  },
+  "dialog": {
+    "switchLegacy": {
+      "title": "Eski sürüme geçilsin mi?",
+      "body": "Bu siteden ayrılıp eski portfolyoyu açacaksınız. Devam edilsin mi?",
+      "confirm": "Evet, götür",
+      "cancel": "Burada kal"
+    }
   },
   "readme": {
     "greeting": "// Portfolyoma hoş geldiniz",
