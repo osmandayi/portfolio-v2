@@ -36,7 +36,9 @@
   --fg: #c9d1d9; --fg-muted: #8b949e; --accent: #58a6ff; --accent-2: #a371f7;
   --success: #3fb950; --danger: #f85149; --warning: #d29922;
 }
-* { border-color: var(--border); }
+@layer base {
+  * { border-color: var(--border); }
+}
 html, body {
   height: 100%; background: var(--bg); color: var(--fg);
   font-family: var(--font-sans);
