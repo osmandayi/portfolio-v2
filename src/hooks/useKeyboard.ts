@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 import { useUiStore } from "@/hooks/useUiStore";
 import { useTabs } from "@/hooks/useTabs";
+import { fileById } from "@/lib/files";
 
 function isTextField(el: EventTarget | null) {
   if (!(el instanceof HTMLElement)) return false;
@@ -13,6 +16,8 @@ function isTextField(el: EventTarget | null) {
 export function useKeyboard() {
   const { setSidebar, setPalette, setTerminal, paletteOpen } = useUiStore();
   const { openIds, activeId, close, setActive } = useTabs();
+  const router = useRouter();
+  const locale = useLocale();
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -33,7 +38,11 @@ export function useKeyboard() {
       }
       if (mod && e.key.toLowerCase() === "w") {
         e.preventDefault();
+        const idx = openIds.indexOf(activeId);
+        const nextId = openIds[idx + 1] ?? openIds[idx - 1] ?? "readme";
         close(activeId);
+        const f = fileById(nextId);
+        router.push(`/${locale}${f.route === "/" ? "" : f.route}`);
         return;
       }
       if ((e.ctrlKey && (e.key === "`" || e.key === "~")) || (e.metaKey && e.key.toLowerCase() === "j")) {
@@ -57,5 +66,5 @@ export function useKeyboard() {
 
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [setSidebar, setPalette, setTerminal, close, setActive, activeId, openIds, paletteOpen]);
+  }, [setSidebar, setPalette, setTerminal, close, setActive, activeId, openIds, paletteOpen, router, locale]);
 }

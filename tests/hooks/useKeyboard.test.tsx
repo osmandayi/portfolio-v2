@@ -7,6 +7,7 @@ const setPalette = vi.fn();
 const setTerminal = vi.fn();
 const closeActive = vi.fn();
 const setActiveByIndex = vi.fn();
+const routerPush = vi.fn();
 
 vi.mock("@/hooks/useUiStore", () => ({
   useUiStore: () => ({
@@ -28,6 +29,15 @@ vi.mock("@/hooks/useTabs", () => ({
   }),
 }));
 
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({ push: routerPush }),
+  usePathname: () => "/en/about",
+}));
+
+vi.mock("next-intl", () => ({
+  useLocale: () => "en",
+}));
+
 function press(key: string, opts: KeyboardEventInit = {}) {
   window.dispatchEvent(new KeyboardEvent("keydown", { key, ...opts }));
 }
@@ -39,6 +49,7 @@ describe("useKeyboard", () => {
     setTerminal.mockClear();
     closeActive.mockClear();
     setActiveByIndex.mockClear();
+    routerPush.mockClear();
   });
 
   it("Cmd+K toggles command palette", () => {
