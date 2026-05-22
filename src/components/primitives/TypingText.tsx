@@ -22,12 +22,16 @@ export function TypingText({
   });
 
   useEffect(() => {
-    if (shown === text) return;
+    if (once && sessionStorage.getItem(FLAG)) {
+      setShown(text);
+      return;
+    }
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       setShown(text);
       if (once) sessionStorage.setItem(FLAG, "1");
       return;
     }
+    setShown("");
     let i = 0;
     const id = window.setInterval(() => {
       i += 1;
@@ -38,7 +42,7 @@ export function TypingText({
       }
     }, speed);
     return () => window.clearInterval(id);
-  }, [text, speed, once, shown]);
+  }, [text, speed, once]);
 
   return (
     <span className={className}>

@@ -30,12 +30,20 @@ function save(state: Persisted) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
+const DEFAULT: Persisted = { openIds: ["readme"], activeId: "readme" };
+
 export function useTabs() {
-  const [state, setState] = useState<Persisted>(() => load());
+  const [state, setState] = useState<Persisted>(DEFAULT);
+  const [hydrated, setHydrated] = useState(false);
 
   useEffect(() => {
-    save(state);
-  }, [state]);
+    setState(load());
+    setHydrated(true);
+  }, []);
+
+  useEffect(() => {
+    if (hydrated) save(state);
+  }, [state, hydrated]);
 
   const open = useCallback((id: FileId) => {
     setState((s) => {
