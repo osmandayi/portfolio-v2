@@ -62,7 +62,7 @@ export function ContactPage() {
           <li className="flex items-center gap-3">
             <ExternalLink className="h-4 w-4 text-accent" />
             <span className="text-fg-muted">{t("linkedin")}:</span>
-            <a className="text-fg hover:text-accent" href={LINKEDIN} target="_blank" rel="noreferrer">/in/osman-d-272a2820b</a>
+            <a className="break-all text-fg hover:text-accent" href={LINKEDIN} target="_blank" rel="noreferrer">{LINKEDIN}</a>
           </li>
         </ul>
 
