@@ -52,7 +52,15 @@
       "Bash(curl -s -o /dev/null \"http://localhost:3000/en\")",
       "Bash(curl -s -o /dev/null \"http://localhost:3000/tr\")",
       "Bash(curl -s -o /dev/null \"http://localhost:3000/en/projects\")",
-      "Bash(curl -s -o /dev/null \"http://localhost:3000/en/contact\")"
+      "Bash(curl -s -o /dev/null \"http://localhost:3000/en/contact\")",
+      "Bash(curl -s -o /dev/null -w \"/en HTTP %{http_code}\\\\n\" \"http://localhost:3000/en\")",
+      "Bash(curl -s -o /dev/null -w \"/tr HTTP %{http_code}\\\\n\" \"http://localhost:3000/tr\")",
+      "Bash(taskkill /PID 1892 /F)",
+      "PowerShell(Stop-Process *)",
+      "Bash(curl -s -o /dev/null -w \"/en HTTP %{http_code}\\\\n\" \"http://localhost:3001/en\")",
+      "Bash(curl -s -o /dev/null -w \"/tr HTTP %{http_code}\\\\n\" \"http://localhost:3001/tr\")",
+      "Bash(curl -s -o /dev/null -w \"/en HTTP %{http_code}, %{size_download}B%{stderr}\\\\n\" \"http://localhost:3000/en\")",
+      "Bash(curl -s -o /dev/null -w \"/tr HTTP %{http_code}, %{size_download}B%{stderr}\\\\n\" \"http://localhost:3000/tr\")"
     ]
   }
 }

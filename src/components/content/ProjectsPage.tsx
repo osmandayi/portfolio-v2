@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ComponentType } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { GitBranch, ExternalLink } from "lucide-react";
@@ -12,6 +12,44 @@ import { cn } from "@/lib/cn";
 function idKey(id: string): string {
   if (id === "coffe-pub") return "coffe";
   return id;
+}
+
+function ProjectIconButton({
+  href,
+  label,
+  unavailableLabel,
+  Icon,
+}: {
+  href: string | null;
+  label: string;
+  unavailableLabel: string;
+  Icon: ComponentType<{ className?: string }>;
+}) {
+  const base = "pointer-events-auto flex h-8 w-8 items-center justify-center rounded-full border shadow-sm transition";
+  if (!href) {
+    return (
+      <span
+        role="img"
+        aria-label={unavailableLabel}
+        title={unavailableLabel}
+        className={cn(base, "cursor-not-allowed border-danger/40 bg-danger/90 text-white")}
+      >
+        <Icon className="h-4 w-4" />
+      </span>
+    );
+  }
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      aria-label={label}
+      title={label}
+      className={cn(base, "border-success/40 bg-success/90 text-white hover:bg-success")}
+    >
+      <Icon className="h-4 w-4" />
+    </a>
+  );
 }
 
 export function ProjectsPage() {
@@ -49,63 +87,55 @@ export function ProjectsPage() {
         </div>
 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {visible.map((p, i) => (
-            <RevealOnView key={p.id} delay={(i % 3) * 0.05}>
-              <article className="group overflow-hidden rounded-lg border border-border bg-panel/50 transition hover:border-accent/60">
-                <div className="relative aspect-[16/10] overflow-hidden bg-panel-2">
-                  <Image
-                    src={p.image}
-                    alt={t(`items.${idKey(p.id)}.title`)}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                    className="object-cover transition group-hover:scale-[1.03]"
-                  />
-                </div>
-                <div className="p-4">
-                  <div className="mb-2 flex flex-wrap items-center gap-2">
-                    {p.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="rounded border border-border bg-panel px-1.5 py-0.5 text-[10px] uppercase tracking-wider text-fg-muted"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h2 className="font-mono text-[15px] text-fg">{t(`items.${idKey(p.id)}.title`)}</h2>
-                  <p className="mt-2 line-clamp-3 font-sans text-[13px] text-fg-muted">
-                    {t(`items.${idKey(p.id)}.desc`)}
-                  </p>
-                  <div className="mt-3 flex items-center gap-3 text-[12px]">
-                    {p.gitUrl ? (
-                      <a
+          {visible.map((p, i) => {
+            const title = t(`items.${idKey(p.id)}.title`);
+            return (
+              <RevealOnView key={p.id} delay={(i % 3) * 0.05} className="h-full">
+                <article className="group flex h-full flex-col overflow-hidden rounded-lg border border-border bg-panel/50 transition hover:border-accent/60">
+                  <div className="relative aspect-[16/10] shrink-0 overflow-hidden bg-panel-2">
+                    <Image
+                      src={p.image}
+                      alt={title}
+                      fill
+                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                      className="object-cover transition group-hover:scale-[1.03]"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                    <div className="absolute right-2 top-2 flex gap-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                      <ProjectIconButton
                         href={p.gitUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-fg-muted hover:text-accent"
-                      >
-                        <GitBranch className="h-3.5 w-3.5" /> {t("viewGit")}
-                      </a>
-                    ) : (
-                      <span className="text-fg-muted/50">{t("noRepo")}</span>
-                    )}
-                    {p.previewUrl ? (
-                      <a
+                        label={t("viewGit")}
+                        unavailableLabel={t("noRepo")}
+                        Icon={GitBranch}
+                      />
+                      <ProjectIconButton
                         href={p.previewUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1 text-fg-muted hover:text-accent"
-                      >
-                        <ExternalLink className="h-3.5 w-3.5" /> {t("viewLive")}
-                      </a>
-                    ) : (
-                      <span className="text-fg-muted/50">{t("noLive")}</span>
-                    )}
+                        label={t("viewLive")}
+                        unavailableLabel={t("noLive")}
+                        Icon={ExternalLink}
+                      />
+                    </div>
                   </div>
-                </div>
-              </article>
-            </RevealOnView>
-          ))}
+                  <div className="flex flex-1 flex-col p-4">
+                    <div className="mb-2 flex flex-wrap items-center gap-2">
+                      {p.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded border border-border bg-panel px-1.5 py-0.5 text-[10px] uppercase tracking-wider text-fg-muted"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <h2 className="font-mono text-[15px] text-fg">{title}</h2>
+                    <p className="mt-2 line-clamp-3 font-sans text-[13px] text-fg-muted">
+                      {t(`items.${idKey(p.id)}.desc`)}
+                    </p>
+                  </div>
+                </article>
+              </RevealOnView>
+            );
+          })}
         </div>
         <p className="mt-8 text-fg-muted">{"];"}</p>
       </div>
