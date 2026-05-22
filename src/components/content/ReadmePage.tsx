@@ -6,7 +6,7 @@ import { ArrowRight, Mail, Download } from "lucide-react";
 import { TypingText } from "@/components/primitives/TypingText";
 import { LineGutter } from "@/components/primitives/LineGutter";
 
-export function ReadmePage() {
+export function ReadmePage({ cvHref, cvFile }: { cvHref: string; cvFile: string }) {
   const t = useTranslations("readme");
   const locale = useLocale();
 
@@ -41,7 +41,8 @@ export function ReadmePage() {
             <Mail className="h-4 w-4" /> {t("ctaContact")}
           </Link>
           <a
-            href="/cv.pdf"
+            href={cvHref}
+            download={cvFile}
             className="inline-flex items-center gap-2 rounded-md border border-border px-4 py-2 text-sm text-fg-muted hover:border-accent hover:text-fg"
           >
             <Download className="h-4 w-4" /> {t("ctaCv")}

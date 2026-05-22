@@ -60,7 +60,12 @@
       "Bash(curl -s -o /dev/null -w \"/en HTTP %{http_code}\\\\n\" \"http://localhost:3001/en\")",
       "Bash(curl -s -o /dev/null -w \"/tr HTTP %{http_code}\\\\n\" \"http://localhost:3001/tr\")",
       "Bash(curl -s -o /dev/null -w \"/en HTTP %{http_code}, %{size_download}B%{stderr}\\\\n\" \"http://localhost:3000/en\")",
-      "Bash(curl -s -o /dev/null -w \"/tr HTTP %{http_code}, %{size_download}B%{stderr}\\\\n\" \"http://localhost:3000/tr\")"
+      "Bash(curl -s -o /dev/null -w \"/tr HTTP %{http_code}, %{size_download}B%{stderr}\\\\n\" \"http://localhost:3000/tr\")",
+      "Bash(curl -s -I \"http://localhost:3000/cv.pdf\")",
+      "Bash(curl -s \"http://localhost:3000/cv.pdf\")",
+      "Bash(curl -s -o /dev/null -w \"/osman_dayi.pdf    HTTP %{http_code}, %{size_download}B, %{content_type}\\\\n\" \"http://localhost:3000/osman_dayi.pdf\")",
+      "Bash(curl -s -o /dev/null -w \"/osman_dayi_fe.pdf HTTP %{http_code}, %{size_download}B, %{content_type}\\\\n\" \"http://localhost:3000/osman_dayi_fe.pdf\")",
+      "Bash(curl -s -o /dev/null -w \"/cv.pdf \\(eski path\\) HTTP %{http_code}\\\\n\" \"http://localhost:3000/cv.pdf\")"
     ]
   }
 }
