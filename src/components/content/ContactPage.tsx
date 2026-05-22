@@ -57,12 +57,12 @@ export function ContactPage() {
           <li className="flex items-center gap-3">
             <GitBranch className="h-4 w-4 text-accent" />
             <span className="text-fg-muted">{t("github")}:</span>
-            <a className="text-fg hover:text-accent" href={GITHUB} target="_blank" rel="noreferrer">{GITHUB}</a>
+            <a className="text-fg hover:text-accent" href={GITHUB} target="_blank" rel="noreferrer">{GITHUB.replace(/^https?:\/\//, "")}</a>
           </li>
           <li className="flex items-center gap-3">
             <ExternalLink className="h-4 w-4 text-accent" />
             <span className="text-fg-muted">{t("linkedin")}:</span>
-            <a className="break-all text-fg hover:text-accent" href={LINKEDIN} target="_blank" rel="noreferrer">{LINKEDIN}</a>
+            <a className="break-all text-fg hover:text-accent" href={LINKEDIN} target="_blank" rel="noreferrer">{LINKEDIN.replace(/^https?:\/\//, "")}</a>
           </li>
         </ul>
 
