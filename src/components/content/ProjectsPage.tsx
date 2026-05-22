@@ -25,16 +25,17 @@ function ProjectIconButton({
   unavailableLabel: string;
   Icon: ComponentType<{ className?: string }>;
 }) {
-  const base = "pointer-events-auto flex h-8 w-8 items-center justify-center rounded-full border shadow-sm transition";
+  const base = "pointer-events-auto inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-medium shadow-md transition";
   if (!href) {
     return (
       <span
         role="img"
         aria-label={unavailableLabel}
         title={unavailableLabel}
-        className={cn(base, "cursor-not-allowed border-danger/40 bg-danger/90 text-white")}
+        className={cn(base, "cursor-not-allowed bg-danger/90 text-white")}
       >
         <Icon className="h-4 w-4" />
+        <span>{unavailableLabel}</span>
       </span>
     );
   }
@@ -45,9 +46,10 @@ function ProjectIconButton({
       rel="noreferrer"
       aria-label={label}
       title={label}
-      className={cn(base, "border-success/40 bg-success/90 text-white hover:bg-success")}
+      className={cn(base, "bg-success/90 text-white hover:bg-success")}
     >
       <Icon className="h-4 w-4" />
+      <span>{label}</span>
     </a>
   );
 }
@@ -100,8 +102,8 @@ export function ProjectsPage() {
                       sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
                       className="object-cover transition group-hover:scale-[1.03]"
                     />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
-                    <div className="absolute right-2 top-2 flex gap-2 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+                    <div className="pointer-events-none absolute inset-0 bg-black/65 opacity-0 transition-opacity duration-200 group-hover:opacity-100" />
+                    <div className="absolute inset-0 flex flex-wrap items-center justify-center gap-3 px-3 opacity-0 transition-opacity duration-200 group-hover:opacity-100">
                       <ProjectIconButton
                         href={p.gitUrl}
                         label={t("viewGit")}
