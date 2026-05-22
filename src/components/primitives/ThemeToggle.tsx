@@ -20,6 +20,7 @@ export function ThemeToggle() {
     <button
       onClick={() => setTheme(next)}
       aria-label={`theme: ${theme}`}
+      aria-pressed={resolvedTheme === "dark"}
       title={`theme: ${theme}`}
       className="flex h-6 w-6 items-center justify-center rounded text-fg-muted hover:bg-panel-2 hover:text-fg"
     >
