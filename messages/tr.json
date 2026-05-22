@@ -21,7 +21,7 @@
     "switchLegacy": {
       "title": "Eski sürüme geçilsin mi?",
       "body": "Bu siteden ayrılıp eski portfolyoyu açacaksınız. Devam edilsin mi?",
-      "confirm": "Evet, götür",
+      "confirm": "Evet, git",
       "cancel": "Burada kal"
     }
   },
