@@ -15,7 +15,7 @@ export function Providers({
   messages: AbstractIntlMessages;
 }) {
   return (
-    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange={false}>
       <NextIntlClientProvider locale={locale} messages={messages}>
         <UiStoreProvider>{children}</UiStoreProvider>
       </NextIntlClientProvider>
