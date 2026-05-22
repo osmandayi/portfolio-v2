@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useState, useRef } from "react";
+import { useCallback, useState, useRef, useEffect } from "react";
 import { FILES, type FileId } from "@/lib/files";
 
 export interface TerminalLine {
@@ -15,6 +15,21 @@ export interface TerminalCtx {
   switchLang: (l: "en" | "tr") => void;
   openFile: (id: FileId) => void;
   copyEmail: () => void;
+}
+
+const HISTORY_KEY = "portfolio.terminal.history";
+
+function loadHistory(): string[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = sessionStorage.getItem(HISTORY_KEY);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    return parsed.filter((x): x is string => typeof x === "string");
+  } catch {
+    return [];
+  }
 }
 
 const HELP =
@@ -39,8 +54,17 @@ export function useTerminal(ctx: TerminalCtx) {
   const [lines, setLines] = useState<TerminalLine[]>([
     { id: 0, kind: "output", text: "Type 'help' to see available commands." },
   ]);
-  const [history, setHistory] = useState<string[]>([]);
+  const [history, setHistory] = useState<string[]>(() => loadHistory());
   const cursorRef = useRef<number>(-1);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    try {
+      sessionStorage.setItem(HISTORY_KEY, JSON.stringify(history));
+    } catch {
+      // sessionStorage full or unavailable; ignore
+    }
+  }, [history]);
 
   const push = (text: string, kind: TerminalLine["kind"] = "output") =>
     setLines((prev) => [...prev, { id: prev.length + 1, kind, text }]);
