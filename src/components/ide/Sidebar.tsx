@@ -7,7 +7,7 @@ import { FileTree } from "./FileTree";
 export function Sidebar() {
   const t = useTranslations("chrome");
   return (
-    <aside className="flex h-full shrink-0 border-r border-border bg-panel">
+    <aside className="absolute inset-y-0 left-0 z-20 flex h-full shrink-0 border-r border-border bg-panel md:relative">
       <nav className="flex w-12 flex-col items-center gap-2 border-r border-border bg-panel py-2">
         <button
           aria-label={t("sidebarExplorer")}

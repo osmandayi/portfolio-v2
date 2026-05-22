@@ -16,7 +16,7 @@ export function StatusBar() {
 
   return (
     <footer className="flex h-6 shrink-0 items-center justify-between border-t border-border bg-accent/90 px-3 text-[11px] text-white dark:bg-accent/70">
-      <div className="flex items-center gap-3">
+      <div className="hidden items-center gap-3 md:flex">
         <span className="flex items-center gap-1">
           <GitBranch className="h-3 w-3" />
           {t("branch")}
@@ -24,7 +24,7 @@ export function StatusBar() {
         <span className="opacity-90">{t("commit")}</span>
       </div>
       <div className="flex items-center gap-3">
-        <span>Ln {ln}, Col {col}</span>
+        <span className="hidden md:inline">Ln {ln}, Col {col}</span>
         <span className="uppercase">{locale}</span>
         <span>{mounted && resolvedTheme === "dark" ? t("themeDark") : t("themeLight")}</span>
         <span>{t("encoding")}</span>

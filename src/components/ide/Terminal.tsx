@@ -65,7 +65,7 @@ export function Terminal() {
           animate={{ height: 240 }}
           exit={{ height: 0 }}
           transition={{ duration: 0.16 }}
-          className="shrink-0 overflow-hidden border-t border-border bg-panel"
+          className="hidden shrink-0 overflow-hidden border-t border-border bg-panel md:block"
           aria-label="Terminal"
         >
           <header className="flex h-7 items-center justify-between border-b border-border bg-panel-2 px-3 text-[11px] text-fg-muted">
