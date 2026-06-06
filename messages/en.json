@@ -12,6 +12,8 @@
     "sidebarGit": "Source Control",
     "sidebarSettings": "Settings",
     "comingSoon": "Coming soon",
+    "menu": "Menu",
+    "closeMenu": "Close menu",
     "toggleSidebar": "Toggle sidebar",
     "toggleTerminal": "Toggle terminal",
     "openExternal": "Open LinkedIn",
@@ -19,7 +21,7 @@
   },
   "dialog": {
     "switchLegacy": {
-      "title": "Switch to the old version?",
+      "chip": "Switch to the old version?",
       "body": "You are about to leave this site and open the older portfolio. Continue?",
       "confirm": "Yes, take me there",
       "cancel": "Stay here"

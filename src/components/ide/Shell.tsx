@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { TitleBar } from "./TitleBar";
 import { Sidebar } from "./Sidebar";
+import { MobileDrawer } from "./MobileDrawer";
 import { TabStrip } from "./TabStrip";
 import { StatusBar } from "./StatusBar";
 import { Terminal } from "./Terminal";
@@ -42,6 +43,7 @@ export function Shell({ children }: { children: ReactNode }) {
         </div>
       </div>
       <StatusBar />
+      <MobileDrawer />
       <CommandPalette />
     </div>
   );

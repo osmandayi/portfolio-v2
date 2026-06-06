@@ -39,7 +39,7 @@ export function TabStrip() {
   };
 
   return (
-    <div className="flex h-9 shrink-0 items-stretch overflow-x-auto border-b border-border bg-panel">
+    <div className="hidden h-9 shrink-0 items-stretch overflow-x-auto border-b border-border bg-panel md:flex">
       <AnimatePresence initial={false}>
         {openIds.map((id) => {
           const f = fileById(id);

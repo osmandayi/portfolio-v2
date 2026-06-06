@@ -8,7 +8,7 @@ export function ConfirmDialog({
   open,
   onClose,
   onConfirm,
-  title,
+  chip,
   description,
   confirmLabel,
   cancelLabel,
@@ -16,7 +16,7 @@ export function ConfirmDialog({
   open: boolean;
   onClose: () => void;
   onConfirm: () => void;
-  title: string;
+  chip: string;
   description: string;
   confirmLabel: string;
   cancelLabel: string;
@@ -52,28 +52,24 @@ export function ConfirmDialog({
             className="w-full max-w-md overflow-hidden rounded-lg border border-border bg-panel shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            <header className="flex items-center justify-between border-b border-border bg-panel-2 px-4 py-2.5">
-              <div className="flex items-center gap-2 font-mono text-[12px] text-fg-muted">
-                <AlertTriangle className="h-3.5 w-3.5 text-warning" />
-                <span className="uppercase tracking-wider">confirm.dialog</span>
+            <header className="flex items-center justify-between gap-3 border-b border-border bg-panel-2 px-4 py-3">
+              <div className="flex min-w-0 items-center gap-2 font-mono text-[13px] text-fg">
+                <AlertTriangle className="h-4 w-4 shrink-0 text-warning" />
+                <span id="confirm-dialog-title" className="truncate font-medium">
+                  {chip}
+                </span>
               </div>
               <button
                 onClick={onClose}
                 aria-label="Close"
-                className="flex h-6 w-6 items-center justify-center rounded text-fg-muted hover:bg-panel hover:text-fg"
+                className="flex h-6 w-6 shrink-0 items-center justify-center rounded text-fg-muted hover:bg-panel hover:text-fg"
               >
                 <X className="h-3.5 w-3.5" />
               </button>
             </header>
 
             <div className="px-5 py-5">
-              <h2
-                id="confirm-dialog-title"
-                className="font-mono text-[15px] font-medium text-fg"
-              >
-                {title}
-              </h2>
-              <p className="mt-2 font-sans text-[14px] leading-relaxed text-fg-muted">
+              <p className="font-sans text-[14px] leading-relaxed text-fg-muted">
                 {description}
               </p>
             </div>

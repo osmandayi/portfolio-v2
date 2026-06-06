@@ -12,6 +12,8 @@
     "sidebarGit": "Kaynak Kontrol",
     "sidebarSettings": "Ayarlar",
     "comingSoon": "Yakında",
+    "menu": "Menü",
+    "closeMenu": "Menüyü kapat",
     "toggleSidebar": "Sidebar'ı aç/kapat",
     "toggleTerminal": "Terminali aç/kapat",
     "openExternal": "LinkedIn'i aç",
@@ -19,7 +21,7 @@
   },
   "dialog": {
     "switchLegacy": {
-      "title": "Eski sürüme geçilsin mi?",
+      "chip": "Eski sürüme geçilsin mi?",
       "body": "Bu siteden ayrılıp eski portfolyoyu açacaksınız. Devam edilsin mi?",
       "confirm": "Evet, git",
       "cancel": "Burada kal"
