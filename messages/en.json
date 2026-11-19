@@ -74,6 +74,26 @@
     "noLive": "No live demo",
     "noRepo": "Private repo",
     "items": {
+      "draftarena": {
+        "title": "Draft Arena",
+        "desc": "A game where two players draft characters in a budget auction and their teams fight in a 3D arena. React Three Fiber, Mixamo animations, procedural dragon and furry bear models, GPU grass and particle effects, a deterministic battle engine and cross-universe balance calibration."
+      },
+      "draftx": {
+        "title": "Captain Draft (draftX)",
+        "desc": "A mobile-first app where two captains draft a 14-player football squad in real time. Server-authoritative draft engine, 120-second shot clock with auto-pick. Next.js, Supabase, Upstash Redis. The live demo is currently unavailable because the database was shut down."
+      },
+      "teamtracker": {
+        "title": "Team Tracker",
+        "desc": "Tracks the tournaments, fixtures and standings of the football and CS2 teams you follow on a single screen. Just add a team; European cups, national-team qualifiers and CS2 events are discovered automatically. Next.js with server-side data aggregation."
+      },
+      "akademi": {
+        "title": "Akademi CRM",
+        "desc": "A role-based CRM prototype for a tutoring school managing 300-350K phone numbers with student and activity data. Virtualized tables, CSV import/export, call scheduling and dashboards. React, TanStack Query/Table/Virtual, Zustand, Recharts."
+      },
+      "rcsantiye": {
+        "title": "RC İnşaat",
+        "desc": "An e-commerce storefront for licensed construction toys and birthday party packages. Product catalog, party packages and a cart flow. Next.js with Framer Motion animations."
+      },
       "coffe": {
         "title": "Coffe Pub",
         "desc": "A single-page coffee site offering information and choices for coffee lovers. Tailwind for layout, React Type Animation for entrance effects — smooth transitions and immersive visual elements."

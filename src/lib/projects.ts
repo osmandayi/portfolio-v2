@@ -11,6 +11,11 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
+  { id: "draftarena", titleKey: "projects.items.draftarena.title", descKey: "projects.items.draftarena.desc", image: "/projects/draft-arena.png", tags: ["Frontend"], gitUrl: null, previewUrl: null },
+  { id: "draftx", titleKey: "projects.items.draftx.title", descKey: "projects.items.draftx.desc", image: "/projects/draftx.png", tags: ["FullStack"], gitUrl: "https://github.com/osmandayi/draftX", previewUrl: null },
+  { id: "teamtracker", titleKey: "projects.items.teamtracker.title", descKey: "projects.items.teamtracker.desc", image: "/projects/team-tracker.png", tags: ["FullStack"], gitUrl: null, previewUrl: "https://team-tracker-coral.vercel.app/" },
+  { id: "akademi", titleKey: "projects.items.akademi.title", descKey: "projects.items.akademi.desc", image: "/projects/akademi-crm.png", tags: ["Frontend"], gitUrl: "https://github.com/osmandayi/akademi-crm", previewUrl: "https://akademi-crm.vercel.app/" },
+  { id: "rcsantiye", titleKey: "projects.items.rcsantiye.title", descKey: "projects.items.rcsantiye.desc", image: "/projects/rc-santiye.png", tags: ["Frontend"], gitUrl: "https://github.com/osmandayi/rc-santiye", previewUrl: "https://rc-santiye.vercel.app/" },
   { id: "coffe-pub", titleKey: "projects.items.coffe.title", descKey: "projects.items.coffe.desc", image: "/projects/coffe-pub.png", tags: ["Frontend"], gitUrl: "https://github.com/osmandayi/CoffePub", previewUrl: "https://coffe-pub.vercel.app/" },
   { id: "sas", titleKey: "projects.items.sas.title", descKey: "projects.items.sas.desc", image: "/projects/sas.png", tags: ["Frontend"], gitUrl: "https://github.com/osmandayi/30Temmuz", previewUrl: "https://30-temmuz.vercel.app/" },
   { id: "ecommerce", titleKey: "projects.items.ecommerce.title", descKey: "projects.items.ecommerce.desc", image: "/projects/online-commerce-and-grocery.png", tags: ["FullStack"], gitUrl: "https://github.com/osmandayi/E-Commerce", previewUrl: "https://online-commerce-and-grocery.vercel.app/" },

@@ -74,6 +74,26 @@
     "noLive": "Canlı önizleme yok",
     "noRepo": "Özel repo",
     "items": {
+      "draftarena": {
+        "title": "Draft Arena",
+        "desc": "İki oyuncunun bakiyeleriyle açık artırmada karakter topladığı, takımların 3D arenada savaştığı oyun. React Three Fiber, Mixamo animasyonları, prosedürel ejderha ve tüylü ayı modelleri, GPU çimen ve parçacık efektleri, deterministik savaş motoru ve evrenler arası denge kalibrasyonu."
+      },
+      "draftx": {
+        "title": "Captain Draft (draftX)",
+        "desc": "İki kaptanın gerçek zamanlı olarak 14 kişilik futbol kadrosu seçtiği, mobil öncelikli draft uygulaması. Sunucu otoriteli draft motoru, 120 saniyelik atış saati ve otomatik seçim. Next.js, Supabase, Upstash Redis. Veritabanı kapandığı için canlı önizleme şu an kullanılamıyor."
+      },
+      "teamtracker": {
+        "title": "Team Tracker",
+        "desc": "Takip ettiğin futbol ve CS2 takımlarının turnuvalarını, eşleşmelerini ve puan tablolarını tek ekranda toplayan uygulama. Takımı eklemen yeterli; Avrupa kupaları, milli takım elemeleri ve CS2 turnuvaları otomatik bulunur. Next.js, sunucu tarafı veri toplama."
+      },
+      "akademi": {
+        "title": "Akademi CRM",
+        "desc": "Bir dershane için 300-350 bin telefon numarasını ve öğrenci/aktivite verisini yöneten, rol tabanlı yetkilendirmeli CRM prototipi. Sanal tablolar, CSV içe/dışa aktarma, arama takvimi ve panolar. React, TanStack Query/Table/Virtual, Zustand, Recharts."
+      },
+      "rcsantiye": {
+        "title": "RC İnşaat",
+        "desc": "Lisanslı inşaat oyuncakları ve doğum günü organizasyonları için e-ticaret vitrini. Ürün kataloğu, organizasyon paketleri ve sepet akışı. Next.js, Framer Motion animasyonları."
+      },
       "coffe": {
         "title": "Coffe Pub",
         "desc": "Kahve severler için bilgi ve seçenekler sunan tek sayfalık site. Tailwind ile şık layout, React Type Animation ile etkileşim — akıcı geçişler ve etkileyici görsel öğeler."
